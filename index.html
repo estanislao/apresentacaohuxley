@@ -734,7 +734,7 @@ body{
 <section class="section">
   <div class="section-tag">05 — como operar</div>
   <div class="section-title">Operação <em>diária</em></div>
-  <div class="section-lead">A única ação humana necessária é a revisão e aprovação dos drafts no dashboard. Todo o resto é automático.</div>
+  <div class="section-lead">O Huxley opera de forma totalmente autônoma. A única interação necessária do time é revisar e aprovar os drafts gerados — e mesmo essa etapa tem SLA automático: após 4 dias sem resposta, o Huxley arquiva sozinho.</div>
 
   <div class="cards cards-2" style="margin-bottom:40px">
     <div>
@@ -769,20 +769,8 @@ body{
           <div class="op-body">Novos drafts prontos · lembrete D+2 · escalada D+3 · arquivamento D+4. Nenhum monitoramento manual necessário.</div>
         </div>
       </div>
-      <div class="op-step">
-        <div class="op-num">5</div>
-        <div>
-          <div class="op-title">Adicionar keywords</div>
-          <div class="op-code">INSERT INTO keywords (keyword, sector, priority)<br>VALUES ('nova keyword', 'gen_ai', 8);</div>
-        </div>
-      </div>
-      <div class="op-step">
-        <div class="op-num">6</div>
-        <div>
-          <div class="op-title">Rodar manualmente</div>
-          <div class="op-code">sudo -u huxley bash -c 'cd /home/huxley/huxley<br>&& python3 modules/post_drafter.py'</div>
-        </div>
-      </div>
+
+
     </div>
   </div>
 
