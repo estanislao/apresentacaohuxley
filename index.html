@@ -549,7 +549,7 @@ body{
 <section class="section">
   <div class="section-tag">02 — arquitetura</div>
   <div class="section-title">Como o <em>Huxley</em> funciona</div>
-  <div class="section-lead">6 camadas em sequência — do sinal externo ao draft publicável no dashboard.</div>
+  <div class="section-lead">7 camadas em sequência — do sinal externo ao post publicado automaticamente nos canais.</div>
 
   <div class="pipeline">
     <div class="pipe-item">
@@ -581,6 +581,11 @@ body{
       <div class="pipe-num">06</div>
       <div class="pipe-title">Dashboard</div>
       <div class="pipe-sub">Aprovação · Teams alert</div>
+    </div>
+    <div class="pipe-item hl">
+      <div class="pipe-num">07</div>
+      <div class="pipe-title">Buffer</div>
+      <div class="pipe-sub">Publicação automática · 3 canais</div>
     </div>
   </div>
 
@@ -694,6 +699,27 @@ body{
       <span class="tag tag-teal">48h · 72h · 96h</span>
     </div>
   </div>
+
+  <div class="cards cards-3" style="margin-top:16px">
+    <div class="card teal">
+      <div class="card-label">Publicação automática <span class="novo-badge" style="font-size:9px;padding:2px 7px">NOVO</span></div>
+      <div class="card-title">Buffer — 3 canais</div>
+      <div class="card-body">Aprovação no dashboard → post enviado automaticamente ao Buffer. LinkedIn recebe texto puro; Instagram e Facebook recebem placeholder com metadata para revisão visual antes de publicar.</div>
+      <div class="card-mono">LinkedIn · Instagram · Facebook<br>Sync ao abrir aba Pré-Aprovado</div>
+    </div>
+    <div class="card cyan">
+      <div class="card-label">Métricas de canal <span class="novo-badge" style="font-size:9px;padding:2px 7px">NOVO</span></div>
+      <div class="card-title">GA4 + LinkedIn API</div>
+      <div class="card-body">Coleta semanal de sessões, bounce rate, engajamento e impressões. Resultados são usados para ajustar a prioridade dos tópicos na fila e gerar insight via Haiku.</div>
+      <div class="card-mono">Toda segunda · insights persistidos<br>no banco por 365d</div>
+    </div>
+    <div class="card blue">
+      <div class="card-label">Feedback loop <span class="novo-badge" style="font-size:9px;padding:2px 7px">NOVO</span></div>
+      <div class="card-title">Ciclo autônomo semanal</div>
+      <div class="card-body">Aprovações → boost ICP. Métricas de canal → boost temático. Direcionamento do analista → boost suave por token matching. Tudo convergindo toda segunda-feira.</div>
+      <div class="card-mono">feedback_analyzer · 10h00<br>analyst_feedback · sob demanda</div>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════ 04 ICP ═══════ -->
@@ -734,7 +760,7 @@ body{
 <section class="section">
   <div class="section-tag">05 — como operar</div>
   <div class="section-title">Operação <em>diária</em></div>
-  <div class="section-lead">O Huxley opera de forma totalmente autônoma. A única interação necessária do time é revisar e aprovar os drafts gerados — e mesmo essa etapa tem SLA automático: após 4 dias sem resposta, o Huxley arquiva sozinho.</div>
+  <div class="section-lead">O Huxley opera de forma totalmente autônoma. A única interação necessária do time é revisar, aprovar e orientar os drafts gerados — após a aprovação, a publicação acontece automaticamente no Buffer. O SLA garante que a fila nunca trave: após 4 dias sem resposta, o Huxley arquiva sozinho.</div>
 
   <div class="cards cards-2" style="margin-bottom:40px">
     <div>
@@ -756,8 +782,9 @@ body{
       <div class="op-step">
         <div class="op-num">3</div>
         <div>
-          <div class="op-title">Aprove ou arquive</div>
-          <div class="op-body">Aprovados ficam aguardando publicação manual. Arquivados saem da fila sem impacto no sistema.</div>
+          <div class="op-title">Aprove → publicação automática</div>
+          <div class="op-body">Ao aprovar, o post é enviado automaticamente ao Buffer (LinkedIn texto puro; Instagram e Facebook com imagem placeholder). Arquivados saem da fila sem impacto no sistema.</div>
+          <span class="novo-badge">NOVO</span>
         </div>
       </div>
     </div>
@@ -769,8 +796,14 @@ body{
           <div class="op-body">Novos drafts prontos · lembrete D+2 · escalada D+3 · arquivamento D+4. Nenhum monitoramento manual necessário.</div>
         </div>
       </div>
-
-
+      <div class="op-step">
+        <div class="op-num">5</div>
+        <div>
+          <div class="op-title">Getting Inputs — direcionar o Huxley</div>
+          <div class="op-body">Aba no dashboard com métricas GA4 e LinkedIn. Cada seção exibe um insight gerado pelo Huxley sobre o impacto nas próximas publicações, e permite que o analista adicione um direcionamento de até 150 caracteres para influenciar a fila de conteúdo.</div>
+          <span class="novo-badge">NOVO</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -826,6 +859,110 @@ body{
           <div class="agenda-sub">Zero LLM · D+2 lembrete · D+3 escalada · D+4 arquiva</div>
         </div>
       </div>
+      <div class="agenda-item">
+        <div class="agenda-time">Segunda<br>09h30</div>
+        <div class="agenda-dot" style="background:#2b7de9"></div>
+        <div>
+          <div class="agenda-title">metrics_ga4 <span class="novo-badge" style="font-size:9px;padding:2px 7px">NOVO</span></div>
+          <div class="agenda-sub">GA4 Data API · snapshot semanal · boost temático na fila · insight Haiku salvo no banco</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">Segunda<br>09h45</div>
+        <div class="agenda-dot" style="background:#0a66c2"></div>
+        <div>
+          <div class="agenda-title">metrics_linkedin <span class="novo-badge" style="font-size:9px;padding:2px 7px">NOVO</span></div>
+          <div class="agenda-sub">LinkedIn API · seguidores · engajamento · boost +2pts se ≥ 10% · insight Haiku salvo no banco</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">Segunda<br>10h00</div>
+        <div class="agenda-dot" style="background:var(--purple, #6b5fff)"></div>
+        <div>
+          <div class="agenda-title">feedback_analyzer</div>
+          <div class="agenda-sub">Boost ICP · few-shot examples · feedback do analista aplicado como boost suave na fila</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 05b GETTING INPUTS ═══════ -->
+<section class="section">
+  <div class="section-tag">05b — getting inputs <span class="novo-badge">NOVO</span></div>
+  <div class="section-title">Orientar o <em>Huxley</em></div>
+  <div class="section-lead">O Huxley aprende com os resultados reais de cada canal. Toda segunda-feira coleta métricas de GA4 e LinkedIn, gera um insight automático e ajusta a fila de tópicos. O analista pode complementar esse ciclo adicionando um direcionamento direto no dashboard.</div>
+
+  <!-- Fluxo de feedback loop -->
+  <div class="cards cards-2" style="margin-bottom:32px">
+    <div class="card cyan">
+      <div class="card-label">Inputs automáticos — toda segunda</div>
+      <div style="margin-top:10px">
+        <div class="stack-row">
+          <span class="stack-key" style="color:#2b7de9">GA4</span>
+          <span class="stack-val">Sessões · bounce rate · top páginas · fontes de tráfego → boost temático na fila</span>
+        </div>
+        <div class="stack-row" style="border:none">
+          <span class="stack-key" style="color:#0a66c2">LinkedIn</span>
+          <span class="stack-val">Seguidores · engajamento · impressões · cliques → boost se engajamento ≥ 10%</span>
+        </div>
+      </div>
+    </div>
+    <div class="card blue">
+      <div class="card-label">Input do analista — sob demanda</div>
+      <div style="margin-top:10px">
+        <div class="stack-row">
+          <span class="stack-key">Dashboard</span>
+          <span class="stack-val">Aba "Getting Inputs" com métricas + insight semanal gerado pelo Huxley</span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-key">Direcionamento</span>
+          <span class="stack-val">Campo de 150 chars por canal — o analista orienta a estratégia diretamente</span>
+        </div>
+        <div class="stack-row" style="border:none">
+          <span class="stack-key">Peso</span>
+          <span class="stack-val">Input suave: boost de +1pt por matching temático, não sobreescreve a lógica autônoma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Como o ciclo funciona -->
+  <div class="card" style="padding:28px;margin-bottom:0">
+    <div style="font-size:14px;font-weight:700;margin-bottom:20px;color:var(--cyan);font-family:'Space Mono',monospace;letter-spacing:0.06em">CICLO SEMANAL DE FEEDBACK</div>
+    <div class="agenda">
+      <div class="agenda-item">
+        <div class="agenda-time">Segunda<br>09h30</div>
+        <div class="agenda-dot" style="background:#2b7de9"></div>
+        <div>
+          <div class="agenda-title">GA4 coleta e analisa</div>
+          <div class="agenda-sub">Top páginas identificadas → tópicos com temática similar recebem boost · insight gerado pelo Haiku e salvo no banco</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">Segunda<br>09h45</div>
+        <div class="agenda-dot" style="background:#0a66c2"></div>
+        <div>
+          <div class="agenda-title">LinkedIn coleta e analisa</div>
+          <div class="agenda-sub">Engajamento acima de 10% → boost +2pts em todos os tópicos pendentes · insight gerado pelo Haiku e salvo no banco</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">Sob demanda</div>
+        <div class="agenda-dot" style="background:var(--amber)"></div>
+        <div>
+          <div class="agenda-title">Analista acessa Getting Inputs</div>
+          <div class="agenda-sub">Vê métricas + insight de cada canal → adiciona direcionamento (ex: "priorizar KNIME para auditores") → salvo como feedback pendente</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">Segunda<br>10h00</div>
+        <div class="agenda-dot" style="background:var(--purple, #6b5fff)"></div>
+        <div>
+          <div class="agenda-title">feedback_analyzer aplica tudo</div>
+          <div class="agenda-sub">Boost ICP por aprovações · few-shot atualizado · direcionamento do analista processado por token matching (+1pt suave)</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -878,9 +1015,10 @@ body{
     <div class="card amber">
       <div class="card-label">Custo mensal estimado</div>
       <div class="custo-row"><span class="custo-label">Perplexity (~200 queries)</span><span class="custo-val">~$1.00</span></div>
-      <div class="custo-row"><span class="custo-label">Haiku 3.5 — triagem</span><span class="custo-val">~$1.50</span></div>
+      <div class="custo-row"><span class="custo-label">Haiku 3.5 — triagem + insights</span><span class="custo-val">~$1.65</span></div>
       <div class="custo-row"><span class="custo-label">Sonnet 4 — 12 drafts/mês</span><span class="custo-val">~$0.50</span></div>
-      <div class="custo-row" style="border-top:1px solid var(--border2)"><span class="custo-label" style="font-weight:700">Total estimado</span><span class="custo-total">~$3.00</span></div>
+      <div class="custo-row"><span class="custo-label">Buffer — plano gratuito (3 canais)</span><span class="custo-val">$0.00</span></div>
+      <div class="custo-row" style="border-top:1px solid var(--border2)"><span class="custo-label" style="font-weight:700">Total estimado</span><span class="custo-total">~$3.15</span></div>
     </div>
   </div>
 </section>
