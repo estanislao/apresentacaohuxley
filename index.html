@@ -593,7 +593,7 @@ body{
     <div class="card blue">
       <div class="card-label">Haiku 3.5 — leve</div>
       <div class="card-title">keyword_monitor</div>
-      <div class="card-body">24 keywords ICP · Perplexity research · score ≥ 60 enfileira para o post_drafter</div>
+      <div class="card-body">12 problemas reais do ICP → Perplexity descobre frases exatas de busca → Haiku pontua 0-100 (intenção comercial + qualificação + mercado BR) · score ≥ 60 enfileira · ≥ 80 prioridade máxima</div>
       <div class="card-mono">seg/qua/sex · 07h30<br>~$0.02/execução</div>
     </div>
     <div class="card blue">
@@ -605,7 +605,7 @@ body{
     <div class="card blue">
       <div class="card-label">Haiku 3.5 — leve</div>
       <div class="card-title">seo_auditor</div>
-      <div class="card-body">Sitemap blog HupData · título, meta desc, H1, word count · identifica posts com SEO score baixo</div>
+      <div class="card-body">Sitemap blog HupData · Haiku avalia 4 critérios: título (relevância ICP), meta description (presença + CTA), profundidade (≥ 800 palavras), H1 · score ≥ 75 Alto / 50-74 Médio / &lt;50 Baixo</div>
       <div class="card-mono">segunda · 08h00<br>~$0.05/execução</div>
     </div>
     <div class="card coral">
@@ -625,6 +625,113 @@ body{
       <div class="card-title">sla_watcher</div>
       <div class="card-body">Verifica drafts pendentes · lembrete Teams D+2 · escalada D+3 · arquiva automaticamente D+4</div>
       <div class="card-mono">a cada 2h · contínuo<br>$0.00/execução</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 02b KEYWORDS ═══════ -->
+<section class="section">
+  <div class="section-tag">02b — metodologia de keywords</div>
+  <div class="section-title">Como o Huxley <em>descobre</em> keywords</div>
+  <div class="section-lead">Em vez de keywords fixas definidas manualmente, o Huxley parte dos problemas reais que o ICP da HupData enfrenta — e pergunta ao Perplexity quais frases esse perfil realmente usa no Google para resolver esses problemas.</div>
+
+  <div class="cards cards-2" style="margin-bottom:40px">
+    <div class="card blue">
+      <div class="card-label">Passo 1 — ponto de partida</div>
+      <div class="card-title">Problemas reais do ICP</div>
+      <div class="card-body">12 perfis de dor mapeados por produto: Diretor de Ops que quer cortar custos sem demitir · Gerente que depende da TI para qualquer relatório · Head de Compliance com risco LGPD · CEO que quer adotar IA mas não sabe por onde começar</div>
+    </div>
+    <div class="card blue">
+      <div class="card-label">Passo 2 — descoberta</div>
+      <div class="card-title">Perplexity Search</div>
+      <div class="card-body">Para cada problema, o Huxley pergunta ao Perplexity: <em>"O que esse perfil pesquisa no Google para resolver isso?"</em> — e extrai as frases exatas em linguagem natural, não termos técnicos. Cache 7 dias para controle de custo.</div>
+    </div>
+    <div class="card cyan">
+      <div class="card-label">Passo 3 — scoring</div>
+      <div class="card-title">Haiku pontua 0–100</div>
+      <div class="card-body">Cada keyword recebe uma nota por 3 critérios: intenção comercial (a pessoa busca uma solução para contratar?), qualificação do perfil (empresa média brasileira — o ICP da HupData?), tamanho de mercado no Brasil.</div>
+    </div>
+    <div class="card cyan">
+      <div class="card-label">Passo 4 — enfileiramento</div>
+      <div class="card-title">Fila automática de conteúdo</div>
+      <div class="card-body">Score ≥ 60 → entra na fila do post_drafter · Score ≥ 80 → prioridade máxima · Tópico já enfileirado nos últimos 30 dias → descartado automaticamente. Roda seg/qua/sex às 01h00.</div>
+    </div>
+  </div>
+
+  <div class="card" style="padding:28px">
+    <div style="font-size:13px;font-weight:700;margin-bottom:18px;color:var(--cyan);font-family:'Space Mono',monospace;letter-spacing:0.06em">EXEMPLOS DE KEYWORDS DESCOBERTAS — SCORE ≥ 90</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:var(--navy);border-radius:8px;padding:14px 16px">
+        <div style="font-size:11px;color:var(--cyan);font-family:'Space Mono',monospace;margin-bottom:6px">agente_ai</div>
+        <div style="font-size:13px;color:var(--fg)">"como usar IA para vender mais sem contratar mais gente"</div>
+      </div>
+      <div style="background:var(--navy);border-radius:8px;padding:14px 16px">
+        <div style="font-size:11px;color:var(--cyan);font-family:'Space Mono',monospace;margin-bottom:6px">knime_train</div>
+        <div style="font-size:13px;color:var(--fg)">"como criar relatórios sem depender da TI"</div>
+      </div>
+      <div style="background:var(--navy);border-radius:8px;padding:14px 16px">
+        <div style="font-size:11px;color:var(--cyan);font-family:'Space Mono',monospace;margin-bottom:6px">gen_ai</div>
+        <div style="font-size:13px;color:var(--fg)">"como extrair valor dos dados sem contratar cientista de dados"</div>
+      </div>
+      <div style="background:var(--navy);border-radius:8px;padding:14px 16px">
+        <div style="font-size:11px;color:var(--cyan);font-family:'Space Mono',monospace;margin-bottom:6px">knime_train</div>
+        <div style="font-size:13px;color:var(--fg)">"automação de relatórios no Excel sem código"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 02c SEO SCORE ═══════ -->
+<section class="section">
+  <div class="section-tag">02c — critério de score SEO</div>
+  <div class="section-title">Como o Huxley <em>avalia</em> cada post</div>
+  <div class="section-lead">O seo_auditor audita cada post do blog HupData e atribui um score 0–100 baseado em 4 critérios avaliados pelo Claude Haiku. O objetivo é identificar os posts com maior potencial de rankeamento e priorizar melhorias.</div>
+
+  <div class="cards cards-2" style="margin-bottom:40px">
+    <div class="card blue">
+      <div class="card-label">Critério 1 — ~25%</div>
+      <div class="card-title">Título</div>
+      <div class="card-body">Clareza e relevância para o ICP da HupData (C-Level, Gestores, Auditores). Um título como <em>"LGPD: Como o KNIME contribui na anonimização de dados"</em> pontua alto porque conecta diretamente a dor do cliente com a solução.</div>
+    </div>
+    <div class="card blue">
+      <div class="card-label">Critério 2 — ~25%</div>
+      <div class="card-title">Meta Description</div>
+      <div class="card-body">Presença de descrição persuasiva com CTA. Ausência de meta description derruba o score automaticamente — e reduz o CTR porque o Google exibe um trecho aleatório do texto no resultado de busca.</div>
+    </div>
+    <div class="card cyan">
+      <div class="card-label">Critério 3 — ~25%</div>
+      <div class="card-title">Profundidade</div>
+      <div class="card-body">Mínimo de 800 palavras para conteúdo B2B. Posts com menos de 500 palavras não têm volume suficiente para rankear em termos competitivos. Páginas de produto com 80–200 palavras ficam na faixa Baixo.</div>
+    </div>
+    <div class="card cyan">
+      <div class="card-label">Critério 4 — ~25%</div>
+      <div class="card-title">Estrutura H1</div>
+      <div class="card-body">Presença do título principal correto na página. H1 ausente ou duplicado prejudica o rastreamento do Google e reduz a clareza semântica do conteúdo.</div>
+    </div>
+  </div>
+
+  <div class="card" style="padding:28px">
+    <div style="font-size:13px;font-weight:700;margin-bottom:20px;color:var(--cyan);font-family:'Space Mono',monospace;letter-spacing:0.06em">ESCALA DE SCORE</div>
+    <div style="display:flex;gap:16px">
+      <div style="flex:1;background:var(--navy);border-radius:8px;padding:18px;border-left:3px solid #22c55e">
+        <div style="font-size:22px;font-weight:700;color:#22c55e;margin-bottom:6px">≥ 75</div>
+        <div style="font-size:13px;font-weight:600;color:var(--fg);margin-bottom:4px">Alto</div>
+        <div style="font-size:12px;color:var(--muted)">Bom título, meta description presente, conteúdo denso e H1 correto. Pronto para rankeamento competitivo.</div>
+      </div>
+      <div style="flex:1;background:var(--navy);border-radius:8px;padding:18px;border-left:3px solid #f59e0b">
+        <div style="font-size:22px;font-weight:700;color:#f59e0b;margin-bottom:6px">50–74</div>
+        <div style="font-size:13px;font-weight:600;color:var(--fg);margin-bottom:4px">Médio</div>
+        <div style="font-size:12px;color:var(--muted)">Conteúdo razoável mas falta meta description ou profundidade. Candidato ao meta_rewriter.</div>
+      </div>
+      <div style="flex:1;background:var(--navy);border-radius:8px;padding:18px;border-left:3px solid #ef4444">
+        <div style="font-size:22px;font-weight:700;color:#ef4444;margin-bottom:6px">&lt; 50</div>
+        <div style="font-size:13px;font-weight:600;color:var(--fg);margin-bottom:4px">Baixo</div>
+        <div style="font-size:12px;color:var(--muted)">Conteúdo curto, título genérico ou sem meta description. Páginas de produto/case sem otimização editorial.</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:14px 16px;background:var(--navy);border-radius:8px;border-left:3px solid var(--cyan)">
+      <div style="font-size:12px;color:var(--cyan);font-family:'Space Mono',monospace;margin-bottom:4px">MAIOR GANHO RÁPIDO</div>
+      <div style="font-size:13px;color:var(--fg)">Adicionar meta descriptions em todos os posts do blog — sozinho sobe a maioria dos posts de Baixo para Médio/Alto. Score médio atual do blog HupData: <strong>42.8</strong> — zero posts com meta description.</div>
     </div>
   </div>
 </section>
@@ -816,7 +923,7 @@ body{
         <div class="agenda-dot" style="background:var(--blue2)"></div>
         <div>
           <div class="agenda-title">keyword_monitor</div>
-          <div class="agenda-sub">24 keywords · Perplexity · Haiku score · enfileira ≥ 60</div>
+          <div class="agenda-sub">12 problemas ICP → Perplexity descobre buscas reais → Haiku score 0-100 · enfileira ≥ 60</div>
         </div>
       </div>
       <div class="agenda-item">
