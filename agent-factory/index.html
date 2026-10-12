@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Huxley — Linha Editorial Campanha Masterclass de IA Operacional · HupData</title>
+<meta name="description" content="Como o Huxley descobre, estrutura e gera posts para a campanha 'Não é chatbot. É operação.' — 5 ICPs, 5 pilares, cadência 3x/semana, destino único: a Masterclass de IA Operacional.">
+<meta property="og:title" content="Huxley — Linha Editorial Campanha Masterclass · HupData">
+<meta property="og:description" content="5 ICPs, 5 pilares editoriais, cadência 3x/semana, campanha de 10 semanas — Não é chatbot. É operação.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..800;1,62..125,300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F1722; --panel:#151F2C; --panel2:#1A2736; --line:#28394E;
+  --ink:#E9EEF4; --mut:#93A7BC; --faint:#6A7E94;
+  --amber:#F2B24A; --amber-ink:#2A1F08; --teal:#53CDB0; --teal-ink:#06251D;
+  --red:#E07A6B;
+  --r:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16.5px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--teal); text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--amber); outline-offset:3px; border-radius:3px}
+.wrap{max-width:1100px; margin:0 auto; padding:0 24px}
+
+/* ---------- header / hero ---------- */
+header{border-bottom:1px solid var(--line)}
+.topbar{display:flex; justify-content:space-between; align-items:baseline; padding:22px 0; gap:16px; flex-wrap:wrap}
+.brand{font-weight:800; font-stretch:125%; letter-spacing:.12em; font-size:.95rem}
+.brand span{color:var(--amber)}
+.doctag{color:var(--mut); font-size:.9rem}
+.hero{padding:72px 0 56px}
+.hero h1{
+  font-stretch:125%; font-weight:800; line-height:1.02;
+  font-size:clamp(2.3rem,6.2vw,4.3rem);
+  letter-spacing:-.01em; max-width:19ch;
+}
+.hero h1 em{font-style:italic; font-stretch:100%; font-weight:600; color:var(--amber)}
+.hero .slogan{
+  display:inline-block; margin:26px 0 14px; padding:9px 16px;
+  border:1px solid var(--line); border-left:4px solid var(--amber); border-radius:8px;
+  background:var(--panel); font-weight:600; font-size:1.05rem;
+}
+.hero p.lede{color:var(--mut); max-width:62ch; font-size:1.08rem}
+.hero .janela{margin-top:22px; color:var(--faint); font-size:.9rem}
+.stats{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:1px;
+  background:var(--line); border:1px solid var(--line); border-radius:var(--r);
+  overflow:hidden; margin:40px 0 64px;
+}
+.stat{background:var(--panel); padding:20px 18px}
+.stat b{display:block; font-stretch:125%; font-weight:800; font-size:2rem; line-height:1; font-variant-numeric:tabular-nums}
+.stat i{font-style:normal; color:var(--mut); font-size:.88rem}
+
+/* ---------- sections ---------- */
+section{padding:64px 0; border-top:1px solid var(--line)}
+.seclabel{color:var(--amber); font-weight:600; font-size:.92rem; letter-spacing:.04em; margin-bottom:10px}
+h2{font-stretch:125%; font-weight:800; font-size:clamp(1.7rem,3.6vw,2.5rem); line-height:1.12; letter-spacing:-.01em; max-width:26ch; margin-bottom:14px}
+h2 em{font-style:italic; font-stretch:100%; font-weight:600; color:var(--amber)}
+.intro{color:var(--mut); max-width:68ch; margin-bottom:34px}
+h3{font-weight:700; font-size:1.12rem; margin:0 0 10px}
+.note{color:var(--mut); font-size:.92rem}
+
+/* cards & grids */
+.grid{display:grid; gap:16px}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--panel); border:1px solid var(--line); border-radius:var(--r); padding:22px}
+.card.alt{background:var(--panel2)}
+.kicker{font-size:.82rem; color:var(--faint); margin-bottom:6px}
+.badge{
+  display:inline-block; font-weight:800; font-stretch:125%;
+  background:var(--amber); color:var(--amber-ink);
+  border-radius:8px; padding:2px 9px; font-size:.95rem; margin-right:8px;
+}
+.badge.t{background:var(--teal); color:var(--teal-ink)}
+.tag{
+  display:inline-block; border:1px solid var(--line); border-radius:999px;
+  padding:3px 11px; font-size:.8rem; color:var(--mut); margin:3px 4px 0 0;
+  background:rgba(255,255,255,.02);
+}
+.tag.hot{border-color:var(--amber); color:var(--amber)}
+dl.fields{display:grid; grid-template-columns:110px 1fr; gap:6px 14px; font-size:.93rem}
+dl.fields dt{color:var(--faint)}
+dl.fields dd{color:var(--ink)}
+ul.dores{list-style:none; margin-top:8px; font-size:.93rem; color:var(--mut)}
+ul.dores li{padding-left:18px; position:relative; margin:4px 0}
+ul.dores li::before{content:""; position:absolute; left:0; top:.55em; width:8px; height:2px; background:var(--amber)}
+
+/* callouts */
+.callout{border:1px solid var(--line); border-left:4px solid var(--amber); border-radius:10px; background:var(--panel); padding:18px 20px; margin-top:24px}
+.callout.warn{border-left-color:var(--red)}
+.callout.sea{border-left-color:var(--teal)}
+.callout b.title{display:block; margin-bottom:6px}
+
+/* pilares */
+.pilar{display:grid; grid-template-columns:230px 1fr; gap:22px; border:1px solid var(--line); border-radius:var(--r); background:var(--panel); padding:22px; margin-bottom:14px}
+.pilar .peso b{font-stretch:125%; font-weight:800; font-size:2.1rem; line-height:1; font-variant-numeric:tabular-nums}
+.pilar .peso i{display:block; font-style:normal; color:var(--mut); font-size:.88rem; margin:4px 0 12px}
+.bar{height:6px; border-radius:999px; background:var(--panel2); overflow:hidden}
+.bar span{display:block; height:100%; background:var(--amber)}
+.pilar .ex{margin-top:12px; color:var(--mut); font-size:.93rem; border-left:2px solid var(--line); padding-left:12px}
+.kwlabel{font-size:.8rem; color:var(--faint); margin:12px 0 2px}
+
+/* VER + AGIR */
+.duo{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; margin-top:28px}
+.duo .half{padding:26px 24px}
+.duo .ver{background:linear-gradient(180deg, rgba(83,205,176,.12), rgba(83,205,176,.03)); border-top:4px solid var(--teal)}
+.duo .agir{background:linear-gradient(180deg, rgba(242,178,74,.12), rgba(242,178,74,.03)); border-top:4px solid var(--amber)}
+.duo h3{font-stretch:125%; font-size:1.3rem}
+.duo .ver h3{color:var(--teal)}
+.duo .agir h3{color:var(--amber)}
+.duo p{color:var(--mut); font-size:.95rem}
+.duo-frase{grid-column:1 / -1; background:var(--panel); padding:16px 24px; text-align:center; font-weight:600}
+
+/* pipeline */
+.pipe{display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin:26px 0 8px}
+.step{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px 13px; position:relative}
+.step b{display:block; font-stretch:125%; font-weight:800; color:var(--amber); font-size:1rem}
+.step strong{display:block; font-size:.9rem; margin:2px 0 4px}
+.step span{display:block; color:var(--mut); font-size:.78rem; line-height:1.45}
+
+/* code + tables */
+pre{
+  background:#0A111A; border:1px solid var(--line); border-radius:10px;
+  padding:16px 18px; overflow-x:auto; font-size:.85rem; line-height:1.55;
+  font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; color:#CFE0EF;
+}
+pre .c{color:var(--amber)}
+.tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--r); margin-top:18px}
+table{width:100%; border-collapse:collapse; font-size:.92rem; min-width:640px}
+th,td{padding:12px 14px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line)}
+th{background:var(--panel2); font-weight:700; white-space:nowrap}
+tr:last-child td{border-bottom:none}
+td b.ok{color:var(--teal)} td b.no{color:var(--red)}
+.fieldcol{color:var(--faint); white-space:nowrap}
+
+/* claims duas colunas */
+.claims{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px}
+.claims .card{padding:22px}
+.claims h3.pode{color:var(--teal)} .claims h3.proibido{color:var(--red)}
+.claims ul{list-style:none; font-size:.93rem; color:var(--mut)}
+.claims li{padding-left:20px; position:relative; margin:7px 0}
+.claims .pode-list li::before{content:"✓"; position:absolute; left:0; color:var(--teal)}
+.claims .proib-list li::before{content:"✕"; position:absolute; left:0; color:var(--red)}
+
+/* checklist */
+ol.check{counter-reset:ck; list-style:none; margin-top:18px; columns:2; column-gap:28px}
+ol.check li{
+  counter-increment:ck; break-inside:avoid; position:relative;
+  padding:10px 12px 10px 46px; margin-bottom:10px;
+  background:var(--panel); border:1px solid var(--line); border-radius:10px; font-size:.92rem;
+}
+ol.check li::before{
+  content:counter(ck,decimal-leading-zero); position:absolute; left:12px; top:10px;
+  font-stretch:125%; font-weight:800; color:var(--amber);
+}
+
+/* fases */
+.fases{list-style:none; margin-top:22px; border-left:2px solid var(--line); padding-left:0}
+.fases li{position:relative; padding:0 0 26px 30px}
+.fases li::before{
+  content:""; position:absolute; left:-7px; top:6px; width:12px; height:12px;
+  border-radius:50%; background:var(--amber); border:3px solid var(--bg);
+}
+.fases li.done::before{background:var(--teal)}
+.fases b.f{font-stretch:125%; font-weight:800}
+.fases .quando{color:var(--amber); font-size:.85rem; margin-left:8px}
+.fases p{color:var(--mut); font-size:.93rem; max-width:72ch}
+.fases .ok{display:block; margin-top:4px; font-size:.85rem; color:var(--faint)}
+
+/* footer */
+footer{border-top:1px solid var(--line); padding:56px 0 64px; position:relative; overflow:hidden}
+footer .hmark{
+  position:absolute; right:-10px; bottom:-60px; font-stretch:125%; font-weight:800;
+  font-size:16rem; line-height:1; color:rgba(242,178,74,.06); user-select:none; pointer-events:none;
+}
+footer .f1{font-weight:700}
+footer .f2,footer .f3{color:var(--mut); font-size:.92rem; margin-top:4px}
+
+@media (max-width:900px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .g3,.g2,.claims,.duo{grid-template-columns:1fr}
+  .duo-frase{grid-column:auto}
+  .pipe{grid-template-columns:repeat(2,1fr)}
+  .pilar{grid-template-columns:1fr}
+  ol.check{columns:1}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap topbar">
+    <div class="brand">HUPDATA <span>· HUXLEY</span></div>
+    <div class="doctag">linha editorial v3.0 · campanha Masterclass de IA Operacional</div>
+  </div>
+  <div class="wrap hero">
+    <h1>Conteúdo que fala a língua de quem toca a <em>operação</em></h1>
+    <div class="slogan">"Não é chatbot. É operação."</div>
+    <p class="lede">Como o Huxley descobre, estrutura e gera posts, imagens e vídeos para os 5 ICPs da campanha — do sinal de mercado ao draft pronto para aprovação, com destino único: a LP da Masterclass de IA Operacional.</p>
+    <p class="janela">Janela · 6/out a 18/dez de 2026 · duas edições: ter 3/nov e ter 1/dez, 12h00–13h00</p>
+    <div class="stats">
+      <div class="stat"><b>5</b><i>ICPs novos no Huxley</i></div>
+      <div class="stat"><b>5</b><i>pilares · 35/25/15/15/10</i></div>
+      <div class="stat"><b>3x</b><i>publicações por semana</i></div>
+      <div class="stat"><b>2</b><i>edições da Masterclass</i></div>
+      <div class="stat"><b>5+2</b><i>contratos + Querri · meta 18/dez</i></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 01 ============ -->
+<section id="icps">
+  <div class="wrap">
+    <div class="seclabel">01 — público-alvo</div>
+    <h2>Os <em>5 ICPs</em> da campanha</h2>
+    <p class="intro">Três ICPs cobrem as prioridades do Plano Tático (P1, P2 alta, P2 média + P2B) e dois abrem a frente comercial. A oferta-âncora da Masterclass é o Kit Gestão &amp; Pessoas; o Kit Comercial é a segunda porta de entrada, para quem tem time de vendas estruturado.</p>
+
+    <div class="grid g3">
+      <div class="card">
+        <div class="kicker">prioridade P1 · aquisição direta</div>
+        <h3><span class="badge">8</span>Serviços de Campo</h3>
+        <dl class="fields">
+          <dt>produto</dt><dd>Kit Gestão &amp; Pessoas (Grazi + Vera)</dd>
+          <dt>cadência</dt><dd>3x por semana</dd>
+          <dt>decisores</dt><dd>Sócio · CEO · Diretor de Operações · Diretor Adm-Financeiro · Gerente de Contratos</dd>
+        </dl>
+        <ul class="dores">
+          <li>OS atrasada descoberta tarde; SLA estourado virando desconto</li>
+          <li>ASO, escalas e férias em planilha</li>
+          <li>Status cobrado por WhatsApp; horas montando relatório para o cliente</li>
+        </ul>
+        <div class="kwlabel">keywords · Keyword Monitor</div>
+        <span class="tag">controle de ordens de serviço</span><span class="tag">SLA de contrato estourado</span><span class="tag">gestão de contratos facilities</span><span class="tag">controle de ASO e escalas</span><span class="tag">gestão de equipes externas</span>
+      </div>
+
+      <div class="card">
+        <div class="kicker">prioridade P2 alta</div>
+        <h3><span class="badge">9</span>Empresas de Projeto</h3>
+        <dl class="fields">
+          <dt>produto</dt><dd>Kit Gestão &amp; Pessoas + Querri</dd>
+          <dt>cadência</dt><dd>3x por semana</dd>
+          <dt>decisores</dt><dd>Sócio-diretor · Diretor de Operações · PMO · Gerente de Projetos e Obras · Eng. de Planejamento</dd>
+        </dl>
+        <ul class="dores">
+          <li>Atraso descoberto quando já virou custo</li>
+          <li>Status de obra montado à mão toda segunda; carga por pessoa invisível</li>
+          <li>Orçado × realizado sem resposta rápida</li>
+        </ul>
+        <div class="kwlabel">keywords · Keyword Monitor</div>
+        <span class="tag">status de obra em planilha</span><span class="tag">planejado vs executado</span><span class="tag">atraso de cronograma</span><span class="tag">carga por equipe</span><span class="tag">orçado vs realizado</span>
+      </div>
+
+      <div class="card">
+        <div class="kicker">prioridade P2 média / P2B · vertical de canal</div>
+        <h3><span class="badge">10</span>Contábil/BPO + multi-setorial</h3>
+        <dl class="fields">
+          <dt>produto</dt><dd>Kit G&amp;P + Querri + Programa de Parceria</dd>
+          <dt>cadência</dt><dd>a cada 14 dias</dd>
+          <dt>decisores</dt><dd>Sócio de escritório contábil · Gerente de Operações/DP · Controller · CFO</dd>
+        </dl>
+        <ul class="dores">
+          <li>Prazos da carteira perdidos; DP da própria casa negligenciado</li>
+          <li>Dado espalhado sem visibilidade de margem; fechamento manual</li>
+        </ul>
+        <div class="kwlabel">keywords · Keyword Monitor</div>
+        <span class="tag">entregas da carteira contábil</span><span class="tag">prazos obrigações acessórias</span><span class="tag">DP sobrecarregado</span><span class="tag">dados espalhados ERP planilhas</span>
+      </div>
+
+      <div class="card alt">
+        <div class="kicker">frente comercial</div>
+        <h3><span class="badge t">11</span>Kit Comercial</h3>
+        <dl class="fields">
+          <dt>produto</dt><dd>Huxley (topo de funil) + Diana (triagem/SDR) + Marcel (deals e follow-up)</dd>
+          <dt>cadência</dt><dd>a cada 14 dias</dd>
+          <dt>decisores</dt><dd>Diretor Comercial · Head de Vendas · CRO · Sócio · Gerente Comercial</dd>
+        </dl>
+        <ul class="dores">
+          <li>Lead esfriando sem follow-up; pipeline desatualizado</li>
+          <li>Topo de funil irregular; custo de um SDR humano</li>
+        </ul>
+        <div class="kwlabel">keywords · Keyword Monitor</div>
+        <span class="tag">follow-up de leads automático</span><span class="tag">leads esfriando no CRM</span><span class="tag">gestão de pipeline</span><span class="tag">custo de SDR</span>
+      </div>
+
+      <div class="card alt">
+        <div class="kicker">frente comercial</div>
+        <h3><span class="badge t">12</span>Marcel</h3>
+        <dl class="fields">
+          <dt>produto</dt><dd>Marcel — agente comercial: cria deals, monitora o CRM e cobra follow-up</dd>
+          <dt>cadência</dt><dd>a cada 14 dias</dd>
+          <dt>decisores</dt><dd>Diretor Comercial · Gerente de Vendas · Sócio · Head de Pré-vendas</dd>
+        </dl>
+        <ul class="dores">
+          <li>Deal parado sem dono; proposta enviada e esquecida</li>
+          <li>CRM que ninguém atualiza; previsão de vendas no feeling</li>
+        </ul>
+        <div class="kwlabel">keywords · Keyword Monitor</div>
+        <span class="tag">deals parados no Pipedrive</span><span class="tag">follow-up de proposta</span><span class="tag">CRM desatualizado</span><span class="tag">previsão de vendas confiável</span>
+      </div>
+
+      <div class="card">
+        <div class="kicker">fila durante a campanha · até 18/dez</div>
+        <h3>Demais ICPs: pausados</h3>
+        <p class="note" style="margin-bottom:10px">A fila fica 100% dedicada à Masterclass, com trava de 3–4 tópicos/semana.</p>
+        <ul class="dores">
+          <li>1 · Agente AI — pausar (substituído pelos ICPs 8–10)</li>
+          <li>3 · KNIME Business Hub — pausar (ou 1x/mês, decisão do CEO)</li>
+          <li>4 · Analytics e Gen AI — pausar</li>
+          <li>5 · Auditoria Interna — pausar (regra da campanha)</li>
+          <li>7 · Simon.AI Distribuição — pausar (janela DP2027 encerrada)</li>
+          <li>2 e 6 — já inativos, sem mudança</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <b class="title">Desqualificadores — o conteúdo NÃO é para:</b>
+      <span class="note">Empresas com menos de 20 colaboradores · sem nenhum sistema de gestão e sem dado utilizável · pedidos de "chatbot simples de WhatsApp" sem processo, dono ou dado definido · hospitais, escolas e redes acima de 500 colaboradores. Nenhuma pauta deve ser desenhada para esse público.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section id="pilares">
+  <div class="wrap">
+    <div class="seclabel">02 — linha editorial</div>
+    <h2>Os <em>5 pilares</em> e o mix 35/25/15/15/10</h2>
+    <p class="intro">A cadência de 3 posts por semana se distribui entre cinco pilares com pesos fixos, aplicados por sorteio ponderado na fila. Cada pilar tem ângulo próprio — e 100% das peças apontam para a LP da Masterclass.</p>
+
+    <div class="pilar">
+      <div class="peso"><b>35%</b><i>Pilar 1 · Dores reais &amp; custos ocultos</i><div class="bar"><span style="width:35%"></span></div></div>
+      <div>
+        <p>Expor a ferida das rotinas manuais: OS, SLA, ASO, status de obra, prazos da carteira — com dado concreto do Brasil e a âncora do analista pleno.</p>
+        <div class="kwlabel">pauta vem do Keyword Monitor · keywords dos ICPs 8–12</div>
+        <p class="ex">"Sua empresa gasta R$ 12 mil/mês para um analista preencher planilha de ASO e ordem de serviço?"</p>
+      </div>
+    </div>
+
+    <div class="pilar">
+      <div class="peso"><b>25%</b><i>Pilar 2 · Bastidores — "vendemos o que usamos"</i><div class="bar"><span style="width:25%"></span></div></div>
+      <div>
+        <p>Huxley, Diana e Marcel operando a própria HupData — a peça mais defensável do mercado, porque nenhum concorrente consegue copiá-la. Só números reais, lidos do banco: drafts gerados e aprovados (huxley_db), contatos priorizados e triagens (Diana), deals criados e follow-ups cobrados (CRM). Seed semanal às sextas, via Getting Inputs.</p>
+        <p class="ex">"Como a Diana priorizou 5.000 contatos enquanto o time estava em reunião"</p>
+      </div>
+    </div>
+
+    <div class="pilar">
+      <div class="peso"><b>15%</b><i>Pilar 3 · Comparativo &amp; educação</i><div class="bar"><span style="width:15%"></span></div></div>
+      <div>
+        <p>Chatbot passivo vs agente operacional: chatbot responde quando perguntado; o agente monitora, analisa, prioriza e age.</p>
+        <div class="kwlabel">keywords</div>
+        <span class="tag">chatbot para empresa</span><span class="tag">agente de IA o que é</span>
+        <p class="ex">"Por que chatbots de WhatsApp não resolvem o problema da sua operação"</p>
+      </div>
+    </div>
+
+    <div class="pilar">
+      <div class="peso"><b>15%</b><i>Pilar 4 · Querri + Agentes (VER + AGIR)</i><div class="bar"><span style="width:15%"></span></div></div>
+      <div>
+        <p>Dado espalhado → a Querri enxerga → o agente age. A solução unificada de analytics conversacional + execução de rotinas.</p>
+        <div class="kwlabel">keywords</div>
+        <span class="tag">dados espalhados ERP planilhas</span><span class="tag">relatório gerencial manual</span>
+        <p class="ex">"Primeiro você enxerga com a Querri. Depois você delega para os Agentes."</p>
+      </div>
+    </div>
+
+    <div class="pilar">
+      <div class="peso"><b>10%</b><i>Pilar 5 · Prova social &amp; Masterclass</i><div class="bar"><span style="width:10%"></span></div></div>
+      <div>
+        <p>Credenciais enterprise autorizadas e chamada direta para o evento — pauta fixa, definida pelo calendário da semana.</p>
+        <p class="ex">"O que você vai ver na Masterclass de IA Operacional (60 minutos, 3 blocos)"</p>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div class="half ver">
+        <h3>VER — Querri</h3>
+        <p>Analytics conversacional: o humano pergunta aos próprios dados em português e recebe gráficos e relatórios em segundos. Nada além do que a Querri confirmou por escrito.</p>
+      </div>
+      <div class="half agir">
+        <h3>AGIR — Agentes HupData</h3>
+        <p>Execução operacional: o agente monitora ERP, e-mail e planilhas em segundo plano — analisa, prioriza e age. 24/7, sem encargos.</p>
+      </div>
+      <div class="duo-frase">"Primeiro você enxerga com a Querri. Depois você delega para os Agentes."</div>
+    </div>
+
+    <div class="callout">
+      <b class="title">Regra fixa de vocabulário da campanha</b>
+      <span class="note">No texto das peças: sempre <b>"agente"</b> (nunca robô/bot), <b>"operação"</b> (nunca "automação" isolada), <b>"rotina"</b> (nunca "tarefa") — e a frase mandatória "monitora, analisa, prioriza e age". Nas keywords do Keyword Monitor, mantêm-se os termos que o mercado digita ("automação de ordens de serviço", "chatbot para empresa"): a conversão de vocabulário acontece no texto, não na busca. O nome "Vera" não entra em peça impulsionada até a decisão registrada sobre a colisão com a Venda.ai; em orgânico, sempre "Vera, agente de RH e DP da HupData".</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section id="geracao">
+  <div class="wrap">
+    <div class="seclabel">03 — geração de conteúdo</div>
+    <h2>Como o Huxley gera um <em>post</em> da campanha</h2>
+    <p class="intro">Mesmo pipeline validado nos ICPs de Auditoria e Simon.AI, com dois ajustes: sorteio ponderado entre os pilares e destino obrigatório com UTM — sem a UTM, a atribuição da campanha se perde e o funil não pode ser recalibrado.</p>
+
+    <div class="pipe">
+      <div class="step"><b>01</b><strong>ICP + pilar</strong><span>Sorteio ponderado 35/25/15/15/10 · cota de 3–4 tópicos/semana</span></div>
+      <div class="step"><b>02</b><strong>Perplexity</strong><span>Query direcionada por ICP + dados de mercado do Brasil</span></div>
+      <div class="step"><b>03</b><strong>Scoring</strong><span>Haiku pontua 0–100 · intenção comercial · fit · ≥ 60 enfileira</span></div>
+      <div class="step"><b>04</b><strong>Knowledge base</strong><span>Claims, case, objeções e vocabulário injetados no prompt</span></div>
+      <div class="step"><b>05</b><strong>Sonnet gera</strong><span>LinkedIn + Instagram + Facebook · template por pilar</span></div>
+      <div class="step"><b>06</b><strong>UTM + Buffer</strong><span>Link com UTM injetada · rascunho no Buffer após aprovação</span></div>
+    </div>
+
+    <h3 style="margin-top:34px">Exemplo de query do Perplexity — ICP 8 · Serviços de Campo</h3>
+    <pre>"Quais os principais problemas de gestão de ordens de serviço, SLA de contratos e rotinas
+de RH (ASO, escalas, férias) em empresas brasileiras de facilities, segurança, limpeza e
+manutenção com 20–200 colaboradores em 2026? Inclua dados concretos de custo de retrabalho,
+multas de SLA e horas gastas em planilhas."</pre>
+
+    <h3 style="margin-top:28px">Regra de destino — 100% das peças com link carregam UTM</h3>
+    <pre>https://hupdata.com/masterclass
+<span class="c">?utm_source=</span>{linkedin|instagram|facebook|tiktok|blog}
+<span class="c">&amp;utm_medium=</span>organic
+<span class="c">&amp;utm_campaign=</span>masterclass2026
+<span class="c">&amp;utm_content=</span>{icp}-{tema}-{ed1|ed2}</pre>
+    <p class="note" style="margin-top:8px">O sufixo de edição (ed1/ed2) separa a atribuição das duas edições na retrospectiva de 18/dez.</p>
+
+    <div class="tablewrap">
+      <table>
+        <tr><th>Período</th><th>CTA padrão das peças</th></tr>
+        <tr><td>Até 3/nov</td><td>Inscrição na Edição 1</td></tr>
+        <tr><td>4/nov – abertura da ed. 2</td><td>Replay da Edição 1 + lista de espera da Edição 2</td></tr>
+        <tr><td>Até 1/dez</td><td>Inscrição na Edição 2</td></tr>
+        <tr><td>Após 1/dez</td><td>Replay final + Diagnóstico de Eficiência Operacional (15 min)</td></tr>
+      </table>
+    </div>
+
+    <div class="callout sea">
+      <b class="title">Mídia por canal</b>
+      <span class="note">LinkedIn: texto puro, tom colega-para-colega, fecha com pergunta ou link UTM · Instagram/Facebook: imagem do ImaviMaker (3 variantes, ~15 min, ~US$ 0,012; "link na bio" só no IG) · Vídeo: default motion_graphics (~US$ 0,024/peça); MiniMax H3 reservado às peças-farol, sempre com a trava "confirmo a geração no valor $X" · TikTok: rascunho criado, canal pendente de conexão no Buffer · Blog: fora do pipeline automático; seo_auditor segue auditando. Tudo entra no Buffer como rascunho — publicação só após aprovação humana.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section id="evidencia">
+  <div class="wrap">
+    <div class="seclabel">04 — base de evidência e claims</div>
+    <h2>O que <em>embasa</em> o conteúdo — e o que não pode ir a público</h2>
+    <p class="intro">A knowledge_base de cada ICP carrega o case real, os dados de mercado com fonte nomeada, a biblioteca de objeções e a cláusula anti-fabricação. Governança de claims é bloqueante, não cosmética.</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <div class="kicker">case real · único benchmark numérico</div>
+        <h3>ArcelorMittal — Simon.AI</h3>
+        <p class="note">Erro de previsão de demanda <b style="color:var(--ink)">abaixo de 10% em 12 meses</b>, em 6 linhas de produto. Uso editorial: números sem citar o cliente como case público sem autorização de logo por peça.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">dados de mercado · sempre com fonte nomeada no post</div>
+        <h3>Fontes autorizadas</h3>
+        <ul class="dores">
+          <li>McKinsey — previsão com IA reduz erros operacionais entre 20% e 50%</li>
+          <li>Oracle / McKinsey — redução de ruptura de estoque em até 65%</li>
+          <li>Aberdeen Group — previsões precisas: crescimento anual 13,4% maior</li>
+          <li>IAPay — payback típico de 6 a 12 meses</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="claims">
+      <div class="card">
+        <h3 class="pode">PODE ir a público</h3>
+        <ul class="pode-list">
+          <li>Case ArcelorMittal (erro &lt; 10% em 12 meses) como único benchmark numérico</li>
+          <li>Âncora de custo: analista pleno ~R$ 12 mil/mês; agente por menos de 30% disso, 24/7</li>
+          <li>Preços públicos: Starter R$ 980 · Pro R$ 2.400 · Enterprise PME R$ 4.200</li>
+          <li>Cost guard com alerta em 80% — nunca surpresa na fatura</li>
+          <li>Credenciais enterprise: Smiles, CVC, BASF, Banco BV, Rabobank, Energisa, Continental, KNIME Elite Partner</li>
+          <li>Oferta oficial (PoC R$ 1.500 + 30% no MRR dos 3 primeiros meses) — somente após o Gate 1</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="proibido">PROIBIDO</h3>
+        <ul class="proib-list">
+          <li>Percentual genérico de economia sem diagnóstico</li>
+          <li>ROI de ~290% em peça pública ou headline (é método de conversa)</li>
+          <li>"14 dias" de instalação até o 1º cliente externo instalado</li>
+          <li>Custo interno de IA (&lt; US$ 5/mês) apresentado como preço de venda</li>
+          <li>Qualquer funcionalidade ou número da Querri sem confirmação por escrito</li>
+          <li>SLAs de suporte · certificações que não temos · logos sem autorização por peça</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <b class="title">Cláusula anti-fabricação</b>
+      <span class="note">É expressamente proibido atribuir à HupData qualquer resultado numérico além do caso ArcelorMittal e das credenciais autorizadas. Dados de mercado, sempre com fonte nomeada. Vale também para o Pilar 2: números da própria operação só os reais, lidos do banco — nunca inventados, estimados ou arredondados.</span>
+    </div>
+
+    <h3 style="margin-top:36px">Biblioteca de respostas a objeções</h3>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Objeção do cliente</th><th>Resposta padronizada</th></tr>
+        <tr><td>"Já temos chatbot."</td><td>Chatbot responde quando perguntado. Nosso agente monitora, analisa, prioriza e age 24/7, sem esperar você chamar.</td></tr>
+        <tr><td>"Já temos ERP."</td><td>O agente não substitui o ERP: ele lê o ERP, o e-mail e as planilhas e resolve as pendências que o ERP deixa expostas.</td></tr>
+        <tr><td>"Meus dados são bagunçados."</td><td>É a realidade de 90% das PMEs. A Querri organiza os dados espalhados; os agentes agem sobre eles.</td></tr>
+        <tr><td>"IA é muito caro."</td><td>Um analista pleno custa ~R$ 12 mil/mês. O agente executa a mesma rotina por menos de 30% disso, 24/7.</td></tr>
+      </table>
+    </div>
+
+    <h3 style="margin-top:36px">Checklist do aprovador — antes de aprovar qualquer peça</h3>
+    <p class="note">Uma resposta "não" = editar ou recusar o draft.</p>
+    <ol class="check">
+      <li>O único número de performance citado é o do case ArcelorMittal (erro &lt; 10% em 12 meses)?</li>
+      <li>Todo dado de mercado traz a fonte nomeada no texto?</li>
+      <li>Sem percentual de economia prometido e sem ROI (~290%) em público?</li>
+      <li>Sem "14 dias" de instalação em nenhuma frase?</li>
+      <li>A oferta (PoC R$ 1.500 / 30% no MRR) só aparece se o Gate 1 estiver aprovado?</li>
+      <li>Nada sobre a Querri que não esteja confirmado por escrito?</li>
+      <li>Vocabulário correto ("agente / operação / rotina") e sem "Vera" em peça impulsionada?</li>
+      <li>Credenciais e logos usados estão na lista autorizada?</li>
+      <li>O link carrega a UTM completa ({icp}-{tema}-{edição})?</li>
+      <li>Os números de bastidores (Pilar 2) são reais, lidos do banco?</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section id="personas">
+  <div class="wrap">
+    <div class="seclabel">05 — personas da masterclass</div>
+    <h2>Quem assiste — e o <em>tom</em> de cada post</h2>
+    <p class="intro">As personas orientam o ângulo e o tom das peças (não o cadastro no banco). Cada uma pesa mais em um bloco do evento: Bloco 1 — o custo oculto do trabalho manual · Bloco 2 — a Querri ao vivo · Bloco 3 — os agentes HupData em ação.</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Persona</th><th>O que dói</th><th>Bloco que pesa</th><th>Tom do post</th></tr>
+        <tr><td><b>Sócio / CEO</b> — decide</td><td>Custo de equipe crescendo sem ganho de capacidade; risco jurídico de folha e prazos</td><td>1 e fechamento (oferta)</td><td>Custo evitado; âncora dos R$ 12 mil/mês</td></tr>
+        <tr><td><b>COO / Diretor de Operações</b> — dono da rotina</td><td>Backoffice afogado; prazo perdido que vira multa; sem visibilidade do que exige atenção hoje</td><td>3 — é quem testa o PoC</td><td>Dor operacional concreta: OS, obra, carteira</td></tr>
+        <tr><td><b>Gerente Adm-Financeiro / Controller</b></td><td>Dados espalhados; fechamento manual; analista caro em tabela dinâmica</td><td>2 — porta de entrada natural</td><td>VER antes de AGIR</td></tr>
+        <tr><td><b>Coordenador de DP/RH</b></td><td>Escalas, ASO, férias e documentos de equipes grandes em planilha</td><td>3 (Vera)</td><td>Risco trabalhista e horas devolvidas</td></tr>
+        <tr><td><b>Gerente de Projetos / PMO</b></td><td>Status montado à mão; planejado × executado descoberto tarde</td><td>3 (Grazi) e 2</td><td>Atraso descoberto cedo, não quando virou custo</td></tr>
+        <tr><td><b>Diretor Comercial</b> — quando há time de vendas</td><td>Lead esfriando sem follow-up; CRM desatualizado</td><td>3 (Kit Comercial) e 2</td><td>Prova viva: Huxley + Diana + Marcel na própria HupData</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section id="operacao">
+  <div class="wrap">
+    <div class="seclabel">06 — operação e métricas</div>
+    <h2>Cadência, <em>aprovação</em> e HuxleyScore</h2>
+    <p class="intro">O ICP da campanha roda 3x por semana. O time só revisa e aprova; a publicação acontece automaticamente via Buffer — sempre a partir de rascunho.</p>
+
+    <div class="grid g3">
+      <div class="card">
+        <h3>Cadência de geração</h3>
+        <ul class="dores">
+          <li>Seg/Qua/Sex 07h30 — keyword_monitor descobre buscas reais via Perplexity</li>
+          <li>Seg/Qua/Sex 08h30 — post_drafter gera os drafts por tópico × 3 canais</li>
+          <li>Teams: alerta seg–sex, 08h–16h, máx. 2 por dia</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Fluxo de aprovação</h3>
+        <ul class="dores">
+          <li>Revisar em hupdata-agent.com/huxley — título, corpo e CTA por canal</li>
+          <li>Aprovar em 1 clique → rascunho no Buffer nos canais</li>
+          <li>SLA: D+2 lembrete · D+3 escalada · D+4 arquiva sozinho</li>
+          <li>Orientar: aba Getting Inputs (direcionamento de 150 caracteres)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Metas no painel semanal</h3>
+        <ul class="dores">
+          <li>Cadência: 3 publicações/semana sem furo</li>
+          <li>CTR LinkedIn: &gt; 2% (piso) · 5% meta de campanha</li>
+          <li>Aprovação de drafts: &gt; 70%</li>
+          <li>Custo de IA: dentro do cost guard (US$ 0,50/dia · US$ 10/mês)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b class="title">HuxleyScore — 0,25 × Aquisição + 0,25 × Engajamento + 0,35 × Conversão + 0,15 × Pipeline</b>
+      <span class="note">Pesos por canal já configurados (LinkedIn 25/30/25/20 · Instagram 35/40/20/5 · Facebook 30/25/35/10). Na campanha, conversão de uma peça = inscrições na LP atribuídas pelo seu utm_content, janela de 7 dias (proxy nas primeiras semanas: cliques UTM no GA4). Peças com score &gt; 80 viram exemplos few-shot no prompt; score &lt; 40 coloca ângulo e keyword em quarentena de 45 dias.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 ============ -->
+<section id="implementacao">
+  <div class="wrap">
+    <div class="seclabel">07 — implementação</div>
+    <h2>Parâmetros para configurar no <em>Huxley</em></h2>
+    <p class="intro">O que precisa ser cadastrado na tabela icp_profiles, campo a campo — estratégia APPEND nos campos text[], backup prévio da tabela e migration idempotente rodada como postgres.</p>
+
+    <div class="tablewrap">
+      <table>
+        <tr><th class="fieldcol">Campo</th><th>ICP 8 · Serviços de Campo</th><th>ICP 9 · Empresas de Projeto</th><th>ICP 10 · Contábil/BPO + P2B</th></tr>
+        <tr><td class="fieldcol">produto</td><td>Kit Gestão &amp; Pessoas (Grazi + Vera)</td><td>Kit Gestão &amp; Pessoas + Querri</td><td>Kit G&amp;P + Querri + Programa de Parceria</td></tr>
+        <tr><td class="fieldcol">ativo</td><td>TRUE (a partir da F1)</td><td>TRUE (a partir da F1)</td><td>TRUE (a partir da F1)</td></tr>
+        <tr><td class="fieldcol">periodicidade</td><td>3x_semana</td><td>3x_semana</td><td>14 dias</td></tr>
+        <tr><td class="fieldcol">cargos</td><td>Sócio · CEO · Diretor de Operações · Diretor Adm-Financeiro · Gerente de Contratos · Gerente de Operações</td><td>Sócio-diretor · Diretor de Operações · PMO · Gerente de Projetos · Gerente de Obras · Engenheiro de Planejamento</td><td>Sócio de escritório contábil · Gerente de Operações/DP · Controller · CFO · Diretor de Operações (indústria, distribuição, franquias)</td></tr>
+        <tr><td class="fieldcol">palavras_chave</td><td>controle de ordens de serviço · SLA de contrato estourado · gestão de contratos facilities · controle de ASO e escalas · software gestão de equipes externas · planilha de OS · gestão de manutenção e chamados</td><td>status de obra em planilha · planejado vs executado obra · atraso de cronograma construtora · carga de trabalho por equipe · orçado vs realizado por projeto · gestão de múltiplas obras</td><td>controle de entregas carteira contábil · prazos obrigações acessórias · departamento pessoal sobrecarregado · dados espalhados ERP planilhas · relatório gerencial manual · visibilidade de margem PME</td></tr>
+        <tr><td class="fieldcol">dores</td><td>OS atrasada descoberta tarde · SLA estourado virando desconto · ASO, escalas e férias em planilha · status cobrado por WhatsApp · horas montando relatório para o cliente</td><td>Atraso descoberto quando já virou custo · status de obra montado à mão toda segunda · carga por pessoa invisível · orçado × realizado sem resposta rápida</td><td>Prazos da carteira perdidos · folha e DP da própria casa negligenciados · dado espalhado sem visibilidade de margem · fechamento manual</td></tr>
+        <tr><td class="fieldcol">knowledge_base</td><td>Claims + anti-fabricação + objeções + matriz VER/AGIR + oferta/CTA + vocabulário</td><td>idem + ângulo Querri (orçado × realizado)</td><td>idem + convite ao programa de parceria (10–22% revenue share)</td></tr>
+      </table>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <tr><th class="fieldcol">Campo</th><th>ICP 11 · Kit Comercial — Huxley + Diana + Marcel</th><th>ICP 12 · Marcel — deals e follow-up no CRM</th></tr>
+        <tr><td class="fieldcol">produto</td><td>Kit Comercial: Huxley (topo de funil) + Diana (triagem/SDR) + Marcel (deals e follow-up)</td><td>Marcel — agente comercial: cria deals, monitora o CRM e cobra follow-up</td></tr>
+        <tr><td class="fieldcol">ativo / periodicidade</td><td>TRUE · 14 dias</td><td>TRUE · 14 dias</td></tr>
+        <tr><td class="fieldcol">cargos</td><td>Diretor Comercial · Head de Vendas · CRO · Sócio · Gerente Comercial</td><td>Diretor Comercial · Gerente de Vendas · Sócio · Head de Pré-vendas</td></tr>
+        <tr><td class="fieldcol">palavras_chave</td><td>follow-up de leads automático · leads esfriando no CRM · gestão de pipeline de vendas · prospecção B2B automatizada · custo de SDR · integrar marketing e vendas PME</td><td>deals parados no Pipedrive · follow-up de proposta comercial · CRM desatualizado pelos vendedores · previsão de vendas confiável · taxa de conversão de propostas</td></tr>
+        <tr><td class="fieldcol">dores</td><td>Lead esfriando sem follow-up · pipeline desatualizado · topo de funil irregular · time preso a planilhas e CRM · custo de um SDR humano</td><td>Deal parado sem dono · proposta enviada e esquecida · CRM que ninguém atualiza · previsão de vendas no feeling</td></tr>
+        <tr><td class="fieldcol">knowledge_base</td><td>Claims + prova viva do Pilar 2 (só números reais do banco) + oferta/CTA</td><td>idem, com ângulo exclusivo do Marcel (deals criados e follow-ups cobrados)</td></tr>
+      </table>
+    </div>
+
+    <h3 style="margin-top:38px">Plano de implementação — fases</h3>
+    <ol class="fases">
+      <li><b class="f">F0 · Auditoria de estado</b><span class="quando">seg–ter 12–13/out</span>
+        <p>Verificar com evidência: LP no ar com UTM? O post_drafter já injeta UTM? Estado real do icp_profiles · sorteio ponderado existe? · TikTok conectado no Buffer?</p>
+        <span class="ok">Pronto quando: checklist go/no-go por item.</span></li>
+      <li><b class="f">F1 · Cadastro dos ICPs 8–12</b><span class="quando">ter–qua 13–14/out</span>
+        <p>Backup da tabela · migration SQL idempotente criando os ICPs 8–12 + pausas dos ICPs 1, 3, 4, 5 e 7 · knowledge_base carregada (claims, oferta, vocabulário, objeções).</p>
+        <span class="ok">Pronto quando: dashboard mostra 8–12 ativos e demais pausados.</span></li>
+      <li><b class="f">F2 · Cota, sorteio e UTM</b><span class="quando">qua–sex 14–16/out</span>
+        <p>Cota semanal de 3–4 tópicos · sorteio ponderado 35/25/15/15/10 entre pilares · injetor de UTM com {icp}-{tema}-{edição}. Branch proposta + ratificação antes do merge.</p>
+        <span class="ok">Pronto quando: dry-run gera ≤ 4 tópicos/semana na proporção certa; testes verdes.</span></li>
+      <li><b class="f">F3 · Smoke test ponta a ponta</b><span class="quando">sex–seg 16–19/out</span>
+        <p>keyword_monitor → draft → aprovação → rascunho no Buffer com UTM e imagem do ImaviMaker · limpeza dos dados de teste. 1ª rodada plena em 19/out — 15 dias antes da Edição 1.</p>
+        <span class="ok">Pronto quando: 1 peça real por ICP aprovada, com UTM correta, no Buffer.</span></li>
+      <li><b class="f">F4 · Pós-Edição 1</b><span class="quando">a partir de 9/nov</span>
+        <p>Social listening com aprovação humana (a Diana só aborda lead após aprovação) · repositório top_performers + quarentena de 45 dias · status de imagem no chat. Nada disso bloqueia a campanha.</p></li>
+    </ol>
+
+    <div class="callout">
+      <b class="title">Amarração aos gates do Plano Tático</b>
+      <span class="note">O conteúdo orgânico pode rodar desde já — o pré-lançamento permite presença e autoridade. Mas nenhuma peça menciona a oferta (PoC R$ 1.500 / 30% no MRR) antes do Gate 1, e nenhum disparo de outbound acontece sem os 5 gates aprovados. A trava das réguas de e-mail (opt-out &gt; 1% por toque interrompe; bounce &gt; 2% congela o lote) pertence à régua no Brevo — o Huxley apenas repassa o alerta no Teams.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 ============ -->
+<section id="calendario">
+  <div class="wrap">
+    <div class="seclabel">08 — calendário</div>
+    <h2>As <em>10 semanas</em> da campanha</h2>
+    <p class="intro">Temas por semana seguem o mix dos pilares; os marcos vêm do Plano Tático. Medição final em 18/dez: 5 contratos de Agentes + 2 assinaturas Querri, 45 dias após a 1ª edição.</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Semana</th><th>Foco editorial</th><th>Marco</th></tr>
+        <tr><td>S2 · 13–17 out</td><td>Planilha de status na segunda · Diana priorizou 5.000 contatos · chatbot vs agente</td><td>ICPs 8–12 no ar · 1ª rodada do pipeline · LP + UTM verificadas</td></tr>
+        <tr><td>S3 · 20–24 out</td><td>R$ 12k em planilha de ASO · primeiro enxerga, depois delega · inscreva-se</td><td>Impulsionamento do convite · medir custo por inscrito</td></tr>
+        <tr><td>S4 · 27–31 out</td><td>Custo oculto do trabalho manual · Marcel criou deals sozinho</td><td>≥ 300 inscritos · ensaio geral 29/out · 5 gates verificados</td></tr>
+        <tr><td><b>S5 · 3–7 nov</b></td><td><b>EDIÇÃO 1 (ter 3/nov)</b> · bastidores da edição · obrigado + replay</td><td>≥ 120 presentes · ≥ 24 sinais · CTA muda para replay</td></tr>
+        <tr><td>S6 · 10–14 nov</td><td>Diana triou sinais em 10 min · depoimentos</td><td>≥ 5 PoCs iniciados · social listening entra</td></tr>
+        <tr><td>S7 · 17–21 nov</td><td>Vagas da Edição 2 · vendas com 0 SDRs</td><td>≥ 1 contrato · ≥ 150 inscritos novos</td></tr>
+        <tr><td>S8 · 24–28 nov</td><td>Status de obra à mão · Querri em 40 segundos</td><td>≥ 200 inscritos acumulados da ed. 2</td></tr>
+        <tr><td><b>S9 · 1–5 dez</b></td><td><b>EDIÇÃO 2 (ter 1/dez)</b> · última chamada → replay</td><td>≥ 80 presentes · ≥ 16 sinais</td></tr>
+        <tr><td>S10 · 8–12 dez</td><td>Guia definitivo de agentes · o que mudou no cliente</td><td>≥ 4 contratos · fim da plataforma de leads</td></tr>
+        <tr><td>S11 · 15–18 dez</td><td>Replay final · retrospectiva (números reais, só se reais)</td><td><b>Medição 18/dez: 5 Agentes + 2 Querri</b></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="hmark" aria-hidden="true">H</div>
+  <div class="wrap">
+    <div class="f1">HUPDATA</div>
+    <div class="f2">Linha Editorial v3.0 · Campanha Masterclass de IA Operacional · Huxley</div>
+    <div class="f3">Dashboard: hupdata-agent.com/huxley · Documento interno · Outubro 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
