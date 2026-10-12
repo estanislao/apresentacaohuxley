@@ -362,6 +362,70 @@ body{
   padding:3px 10px;border-radius:4px;letter-spacing:0.08em;
   vertical-align:middle;margin-left:10px;
 }
+
+/* ─── CHAT TEAMS (mockup) ─── */
+.chat{
+  background:#0f1728;border:1px solid var(--border2);border-radius:14px;
+  padding:20px;display:flex;flex-direction:column;gap:12px;
+}
+.chat-head{
+  font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--muted);padding-bottom:10px;
+  border-bottom:1px solid var(--border);margin-bottom:4px;
+  display:flex;align-items:center;gap:8px;
+}
+.chat-head::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--green);}
+.msg{max-width:88%;padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.55;}
+.msg-who{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.08em;
+  text-transform:uppercase;opacity:0.7;margin-bottom:4px;}
+.msg.user{align-self:flex-end;background:rgba(98,100,167,0.35);border:1px solid rgba(140,142,220,0.35);}
+.msg.bot{align-self:flex-start;background:var(--navy3);border:1px solid var(--border);color:var(--offwhite);}
+.msg.sys{align-self:center;max-width:100%;font-family:'Space Mono',monospace;font-size:10px;
+  color:var(--muted);background:transparent;padding:2px 0;text-align:center;}
+.msg code,.cmd code{font-family:'Space Mono',monospace;font-size:11.5px;color:var(--cyan);}
+
+/* ─── COMANDOS ─── */
+.cmd{
+  font-family:'Space Mono',monospace;font-size:11.5px;color:var(--cyan);
+  background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:6px;
+  padding:8px 12px;margin-top:8px;line-height:1.6;word-break:break-word;
+}
+
+/* ─── ETAPAS (vídeo) ─── */
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
+.step4{background:var(--navy3);border:1px solid var(--border);border-radius:12px;padding:22px;position:relative;}
+.step4-num{font-family:'Space Mono',monospace;font-size:28px;font-weight:700;color:var(--cyan);line-height:1;margin-bottom:10px;}
+.step4-title{font-size:15px;font-weight:700;margin-bottom:8px;}
+.step4-body{font-size:12.5px;color:var(--silver);line-height:1.6;}
+.step4-who{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;
+  margin-top:12px;display:inline-block;padding:3px 8px;border-radius:4px;}
+.who-user{background:rgba(98,100,167,0.3);color:#c5c6f5;}
+.who-auto{background:rgba(0,212,170,0.12);color:var(--teal);}
+
+/* ─── STATUS / ROADMAP ─── */
+.status-row{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border);}
+.status-row:last-child{border-bottom:none;}
+.status-pill{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;
+  padding:3px 8px;border-radius:4px;flex-shrink:0;width:92px;text-align:center;margin-top:2px;}
+.pill-ok{background:rgba(16,185,129,0.15);color:var(--green);}
+.pill-wip{background:rgba(245,158,11,0.15);color:var(--amber);}
+.pill-plan{background:rgba(255,255,255,0.06);color:var(--silver);}
+.status-txt{font-size:13px;color:var(--silver);line-height:1.55;}
+.status-txt strong{color:var(--white);font-weight:600;}
+
+/* ─── RESPONSIVO ─── */
+@media (max-width:900px){
+  .cards-3,.cards-4,.steps4{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .section,.cover{padding-left:16px;padding-right:16px;}
+  .section-title{font-size:30px;}
+  .cover-title{font-size:56px;}
+  .cards-2,.cards-3,.cards-4,.steps4,.icp-grid{grid-template-columns:1fr;}
+  .footer{flex-direction:column;align-items:flex-start;gap:20px;padding:40px 16px;}
+  .footer-meta{text-align:left;}
+  .msg{max-width:100%;}
+}
 </style>
 </head>
 <body>
@@ -372,7 +436,7 @@ body{
   <div class="cover-glow"></div>
   <div class="cover-glow2"></div>
   <div class="cover-logo">HUPDATA</div>
-  <div class="cover-tag">Documento interno · Mai 2026</div>
+  <div class="cover-tag">Documento interno · Out 2026</div>
 
   <!-- Foto + identidade -->
   <div style="display:flex;align-items:center;gap:40px;margin-bottom:36px">
@@ -400,7 +464,7 @@ body{
     </div>
   </div>
 
-  <div class="cover-sub">Como funciona e como operar.</div>
+  <div class="cover-sub">Como funciona, como operar e como criar imagens e vídeos com o ImaviMaker direto pelo Teams.</div>
 
 </div>
 
@@ -431,7 +495,7 @@ body{
     <!-- Huxley -->
     <rect x="80" y="32" width="520" height="52" rx="8" fill="rgba(30,111,217,0.1)" stroke="rgba(0,196,244,0.4)" stroke-width="0.8"/>
     <text x="340" y="52" text-anchor="middle" font-family="'Sora',sans-serif" font-size="13" font-weight="700" fill="#00c4f4">Post Drafter · SEO Auditor · Keyword Monitor · Content Radar</text>
-    <text x="340" y="70" text-anchor="middle" font-family="'Space Mono',monospace" font-size="10" fill="#6b7a99">LinkedIn · Instagram · Facebook · Blog</text>
+    <text x="340" y="70" text-anchor="middle" font-family="'Space Mono',monospace" font-size="10" fill="#6b7a99">LinkedIn · Instagram · Facebook · TikTok · Blog · ImaviMaker: imagem + vídeo</text>
 
     <line x1="340" y1="84" x2="340" y2="106" stroke="#4d9fff" stroke-width="1.5" marker-end="url(#a)"/>
 
@@ -819,7 +883,7 @@ body{
     <div class="card teal">
       <div class="card-label">Publicação automática <span class="novo-badge" style="font-size:9px;padding:2px 7px">NOVO</span></div>
       <div class="card-title">Buffer — 3 canais</div>
-      <div class="card-body">Aprovação no dashboard → post enviado automaticamente ao Buffer. LinkedIn recebe texto puro; Instagram e Facebook recebem placeholder com metadata para revisão visual antes de publicar.</div>
+      <div class="card-body">Aprovação no dashboard → post enviado automaticamente ao Buffer. LinkedIn recebe texto puro; Instagram e Facebook recebem placeholder com metadata para revisão visual antes de publicar. Imagens e vídeos reais agora são gerados sob demanda pelo ImaviMaker via Teams (seção 08).</div>
       <div class="card-mono">LinkedIn · Instagram · Facebook<br>Sync ao abrir aba Pré-Aprovado</div>
     </div>
     <div class="card cyan">
@@ -908,7 +972,7 @@ body{
         <div class="op-num">3</div>
         <div>
           <div class="op-title">Aprove → publicação automática</div>
-          <div class="op-body">Ao aprovar, o post é enviado automaticamente ao Buffer (LinkedIn texto puro; Instagram e Facebook com imagem placeholder). Arquivados saem da fila sem impacto no sistema.</div>
+          <div class="op-body">Ao aprovar, o post é enviado automaticamente ao Buffer (LinkedIn texto puro; Instagram e Facebook com imagem placeholder; peça a imagem real ao Huxley pelo Teams, como mostra a seção 08). Arquivados saem da fila sem impacto no sistema.</div>
           <span class="novo-badge">NOVO</span>
         </div>
       </div>
@@ -1267,6 +1331,241 @@ body{
   </div>
 </section>
 
+
+<!-- ═══════ 07 HUXLEY NO TEAMS ═══════ -->
+<section class="section">
+  <div class="section-tag">07 — huxley no teams <span class="novo-badge">NOVO</span></div>
+  <div class="section-title">Converse com o Huxley <em>por DM</em></div>
+  <div class="section-lead">O Teams virou a porta de entrada do Huxley. Por mensagem direta você ajusta drafts, pede imagens e encomenda vídeos, sem abrir o dashboard. Quando a tarefa envolve imagem ou vídeo, o Huxley aciona o ImaviMaker, o motor de criação visual da HupData.</div>
+
+  <div class="cards cards-2">
+    <div>
+      <div class="op-step">
+        <div class="op-num">1</div>
+        <div>
+          <div class="op-title">Abra uma DM com o Huxley no Teams</div>
+          <div class="op-body">Escreva em linguagem natural. Antes de executar qualquer ação, o Huxley confere seu perfil de acesso (ADMIN ou CONSULT).</div>
+        </div>
+      </div>
+      <div class="op-step">
+        <div class="op-num">2</div>
+        <div>
+          <div class="op-title">Editar um draft pelo chat</div>
+          <div class="op-body">Você pode mudar título, corpo ou CTA de qualquer draft sem entrar no dashboard. Toda edição fica registrada em auditoria.</div>
+          <div class="cmd">edita o draft 47, corpo: …<br>muda o título do draft 12 para …<br>troca o CTA do draft 89 para …</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="op-step">
+        <div class="op-num">3</div>
+        <div>
+          <div class="op-title">Pedir uma imagem</div>
+          <div class="op-body">Informe o ICP e o tema. O ImaviMaker gera 3 variantes, que vão para o OneDrive e viram rascunhos no Buffer em cerca de 15 minutos.</div>
+          <div class="cmd">gera uma imagem para o ICP Simon.AI Demand Prediction — Indústria</div>
+        </div>
+      </div>
+      <div class="op-step">
+        <div class="op-num">4</div>
+        <div>
+          <div class="op-title">Encomendar um vídeo</div>
+          <div class="op-body">O Huxley mostra o briefing e o custo estimado. A geração só começa depois que você digita a frase de confirmação com o valor exato.</div>
+          <div class="cmd">gera um vídeo para o ICP 7 sobre Simon.AI Demand Prediction - Distribuição e Atacado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards cards-3">
+    <div class="card cyan">
+      <div class="card-label">Como o Huxley entende</div>
+      <div class="card-title">Linguagem natural</div>
+      <div class="card-body">Não há sintaxe rígida. Se faltar ICP ou tema, o Huxley pergunta antes de agir. Ajustes podem ser feitos com frases curtas, como <code style="font-family:'Space Mono',monospace;color:var(--cyan)">ajuste duração 20</code>.</div>
+    </div>
+    <div class="card teal">
+      <div class="card-label">Notificações sem ruído</div>
+      <div class="card-title">Janela de horário</div>
+      <div class="card-body">Os alertas de novos drafts no Teams saem só de segunda a sexta, das 08h às 16h, com no máximo 2 por dia.</div>
+    </div>
+    <div class="card amber">
+      <div class="card-label">Rastreabilidade</div>
+      <div class="card-title">Quem pediu, quem aprovou</div>
+      <div class="card-body">Cada aprovação registra a identidade validada: um e-mail humano ou uma política automática. Nada é publicado fora do caminho auditado.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 08 IMAVIMAKER — IMAGEM ═══════ -->
+<section class="section">
+  <div class="section-tag">08 — imavimaker · imagem <span class="novo-badge">NOVO</span></div>
+  <div class="section-title">Do pedido no Teams ao <em>rascunho no Buffer</em></div>
+  <div class="section-lead">Você pede a imagem por DM e o resto é automático. O ImaviMaker cria 3 variantes, salva tudo no OneDrive e o Huxley monta os rascunhos com legenda e CTA para LinkedIn, Instagram e Facebook.</div>
+
+  <div class="pipeline">
+    <div class="pipe-item hl"><div class="pipe-num">01</div><div class="pipe-title">DM no Teams</div><div class="pipe-sub">ICP + tema</div></div>
+    <div class="pipe-item"><div class="pipe-num">02</div><div class="pipe-title">Huxley</div><div class="pipe-sub">monta o briefing · fila de ações (60s)</div></div>
+    <div class="pipe-item"><div class="pipe-num">03</div><div class="pipe-title">ImaviMaker</div><div class="pipe-sub">planner + FLUX · 3 variantes</div></div>
+    <div class="pipe-item"><div class="pipe-num">04</div><div class="pipe-title">Publish auditado</div><div class="pipe-sub">aprovação automática</div></div>
+    <div class="pipe-item"><div class="pipe-num">05</div><div class="pipe-title">OneDrive</div><div class="pipe-sub">pasta Huxley · a cada 15 min</div></div>
+    <div class="pipe-item hl"><div class="pipe-num">06</div><div class="pipe-title">Buffer</div><div class="pipe-sub">rascunhos · LI · IG · FB</div></div>
+  </div>
+
+  <div class="cards cards-2">
+    <div class="chat">
+      <div class="chat-head">Teams · DM com Huxley · exemplo</div>
+      <div class="msg user"><div class="msg-who">Você</div>gera uma imagem para o ICP Simon.AI Demand Prediction — Indústria</div>
+      <div class="msg bot"><div class="msg-who">Huxley</div>Pedido recebido. O ImaviMaker vai gerar 3 variantes; elas chegam ao OneDrive (pasta Huxley) e viram rascunhos no Buffer.</div>
+      <div class="msg sys">~15 min depois · 3 variantes no OneDrive · rascunhos no Buffer</div>
+    </div>
+    <div>
+      <div class="card teal" style="margin-bottom:16px">
+        <div class="card-label">O que você recebe</div>
+        <div class="custo-row"><span class="custo-label">Variantes geradas</span><span class="custo-val">3 · 1:1 / 9:16 / 1:1</span></div>
+        <div class="custo-row"><span class="custo-label">Arquivos</span><span class="custo-val">OneDrive · Huxley</span></div>
+        <div class="custo-row"><span class="custo-label">Rascunhos Buffer</span><span class="custo-val">1:1 × LI / IG / FB</span></div>
+        <div class="custo-row"><span class="custo-label">Legenda</span><span class="custo-val">mensagem + CTA</span></div>
+        <div class="custo-row"><span class="custo-label">Custo por pedido</span><span class="custo-val" style="color:var(--teal)">~$0.012</span></div>
+      </div>
+      <div class="card-body" style="font-size:12px">
+        Os posts entram no Buffer sempre como <strong style="color:var(--white)">rascunho</strong>: o time revisa antes de publicar. O CTA "link na bio" só aparece no Instagram. A variante 9:16 fica no OneDrive para uso manual em Stories.
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:18px 22px;background:rgba(0,196,244,0.04);border:1px solid rgba(0,196,244,0.15);border-radius:12px;margin-top:8px">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--cyan);margin-bottom:8px;letter-spacing:0.1em">TESTE REAL · 09/10</div>
+    <div style="font-size:13px;color:var(--silver)">Pedido às 10h15 e 4 rascunhos no Buffer às 10h31, sem intervenção humana. Custo total: <strong style="color:var(--white)">US$ 0,0117</strong>.</div>
+  </div>
+</section>
+
+<!-- ═══════ 08b IMAVIMAKER — VÍDEO ═══════ -->
+<section class="section">
+  <div class="section-tag">08b — imavimaker · vídeo <span class="novo-badge">NOVO</span></div>
+  <div class="section-title">Vídeo em <em>4 etapas</em></div>
+  <div class="section-lead">O vídeo envolve custo real, por isso tem uma trava: o Huxley mostra o briefing e o valor estimado, e só gera depois que você confirma com a frase exata. A partir daí, o ImaviMaker cuida de roteiro, cenas, narração, legendas e controle de qualidade.</div>
+
+  <div class="steps4">
+    <div class="step4">
+      <div class="step4-num">1</div>
+      <div class="step4-title">Pedido → briefing</div>
+      <div class="step4-body">O Huxley monta o rascunho com formato narrado, duração de 15s, canal, ICP, tema, voz e custo estimado. Ajustes são feitos com frases curtas.</div>
+      <span class="step4-who who-user">você + huxley</span>
+    </div>
+    <div class="step4">
+      <div class="step4-num">2</div>
+      <div class="step4-title">Validação</div>
+      <div class="step4-body">A geração só dispara com a frase <strong style="color:var(--white)">"confirmo a geração no valor $X"</strong>. Respostas como "sim", "ok" ou "aceito" não disparam.</div>
+      <span class="step4-who who-user">você</span>
+    </div>
+    <div class="step4">
+      <div class="step4-num">3</div>
+      <div class="step4-title">Criação</div>
+      <div class="step4-body">Roteiro (planner) → cenas geradas por IA + imagens → narração com voz clonada em PT-BR → render com legendas e áudio normalizado → QA automático de 11 checks.</div>
+      <span class="step4-who who-auto">automático</span>
+    </div>
+    <div class="step4">
+      <div class="step4-num">4</div>
+      <div class="step4-title">Aviso</div>
+      <div class="step4-body">Mensagem no canal do Teams com tema, arquivo <code style="font-family:'Space Mono',monospace;color:var(--cyan)">Video_&lt;id&gt;.mp4</code> no OneDrive (pasta Huxley) e o status do rascunho no Buffer (TikTok).</div>
+      <span class="step4-who who-auto">automático</span>
+    </div>
+  </div>
+
+  <div class="cards cards-2">
+    <div class="chat">
+      <div class="chat-head">Teams · DM com Huxley · exemplo</div>
+      <div class="msg user"><div class="msg-who">Você</div>gera um vídeo para o ICP 7 sobre Simon.AI Demand Prediction - Distribuição e Atacado</div>
+      <div class="msg bot"><div class="msg-who">Huxley</div>Briefing: vídeo narrado · 15s · TikTok · ICP 7 · voz padrão.<br>Custo estimado: <strong>$1,21</strong>.<br>Para gerar, responda: <code>confirmo a geração no valor $1,21</code></div>
+      <div class="msg user"><div class="msg-who">Você</div>ajuste duração 20</div>
+      <div class="msg bot"><div class="msg-who">Huxley</div>Briefing atualizado para 20s, com novo custo estimado. Confirme com a frase e o valor atualizado.</div>
+      <div class="msg user"><div class="msg-who">Você</div>confirmo a geração no valor $…</div>
+      <div class="msg sys">~30 min · aviso no canal do Teams · vídeo no OneDrive</div>
+    </div>
+    <div>
+      <div class="card coral" style="margin-bottom:16px">
+        <div class="card-label">Especificações</div>
+        <div class="custo-row"><span class="custo-label">Formato padrão</span><span class="custo-val">narrado · 15s</span></div>
+        <div class="custo-row"><span class="custo-label">Resolução</span><span class="custo-val">1440×2560 · 9:16</span></div>
+        <div class="custo-row"><span class="custo-label">Voz</span><span class="custo-val">clone PT-BR "Josi"</span></div>
+        <div class="custo-row"><span class="custo-label">Áudio</span><span class="custo-val">−16 LUFS · trilha</span></div>
+        <div class="custo-row"><span class="custo-label">Legendas</span><span class="custo-val">embutidas</span></div>
+        <div class="custo-row"><span class="custo-label">Buffer</span><span class="custo-val">rascunho TikTok</span></div>
+      </div>
+      <div style="padding:18px 22px;background:rgba(0,196,244,0.04);border:1px solid rgba(0,196,244,0.15);border-radius:12px">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--cyan);margin-bottom:8px;letter-spacing:0.1em">TESTE REAL · 11/10</div>
+        <div style="font-size:13px;color:var(--silver)">Vídeo de 14s em 1440×2560, QA 11/11, −16,5 LUFS. De 14h03 a 14h31. Custo real <strong style="color:var(--white)">US$ 0,84</strong>, abaixo do estimado de US$ 1,21.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body" style="font-size:12px;margin-top:8px">
+    Se uma etapa falhar, o Huxley avisa e o projeto é arquivado, sem nova tentativa automática e sem custo extra. Vídeos para Reels e LinkedIn ficam no OneDrive para publicação manual.
+  </div>
+</section>
+
+<!-- ═══════ 09 GOVERNANÇA ═══════ -->
+<section class="section">
+  <div class="section-tag">09 — governança e confiabilidade <span class="novo-badge">NOVO</span></div>
+  <div class="section-title">Criação com <em>controle</em></div>
+  <div class="section-lead">Gerar mídia tem custo e expõe a marca. Por isso o ImaviMaker e o Huxley funcionam com limites de orçamento, caminho único de publicação e fallbacks automáticos.</div>
+
+  <div class="cards cards-3">
+    <div class="card amber">
+      <div class="card-label">Orçamento</div>
+      <div class="card-title">Cost guard do ImaviMaker</div>
+      <div class="custo-row"><span class="custo-label">Teto diário</span><span class="custo-val">$4</span></div>
+      <div class="custo-row"><span class="custo-label">Teto por vídeo</span><span class="custo-val">$6</span></div>
+      <div class="custo-row"><span class="custo-label">Briefings de vídeo/semana</span><span class="custo-val">10</span></div>
+    </div>
+    <div class="card blue">
+      <div class="card-label">Publicação</div>
+      <div class="card-title">Caminho único auditado</div>
+      <div class="card-body">Toda publicação passa pelo mesmo endpoint auditado, e um trigger no banco bloqueia qualquer atalho. No Buffer, o conteúdo entra sempre como rascunho, nunca vai direto ao ar.</div>
+    </div>
+    <div class="card teal">
+      <div class="card-label">Voz</div>
+      <div class="card-title">Fallback automático</div>
+      <div class="card-body">Se o serviço de voz principal (ElevenLabs) falhar 3 vezes em 5 minutos, o sistema troca para uma voz local de custo zero. Depois de 10 sucessos seguidos, volta para a principal. A troca gera alerta no Teams e por e-mail.</div>
+    </div>
+  </div>
+
+  <div class="card" style="padding:28px">
+    <div style="font-size:14px;font-weight:700;margin-bottom:12px;color:var(--cyan);font-family:'Space Mono',monospace;letter-spacing:0.06em">STACK DE CRIAÇÃO — IMAVIMAKER</div>
+    <div class="stack-row"><span class="stack-key">Roteiro</span><span class="stack-val">Claude Sonnet: planner de cenas e mensagem-chave</span></div>
+    <div class="stack-row"><span class="stack-key">Imagem</span><span class="stack-val">fal.ai · FLUX schnell</span><span class="stack-badge tag tag-teal" style="margin-top:0">~$0.012 / pedido</span></div>
+    <div class="stack-row"><span class="stack-key">Vídeo</span><span class="stack-val">MiniMax H3: cenas generativas em 2K</span></div>
+    <div class="stack-row"><span class="stack-key">Narração</span><span class="stack-val">ElevenLabs Multilingual v2, com fallback Piper local</span></div>
+    <div class="stack-row"><span class="stack-key">Render</span><span class="stack-val">ffmpeg · motion graphics · legendas · loudnorm · QA de 11 checks</span></div>
+    <div class="stack-row"><span class="stack-key">Entrega</span><span class="stack-val">OneDrive (pasta Huxley) + rascunhos no Buffer</span></div>
+  </div>
+</section>
+
+<!-- ═══════ 10 PRÓXIMOS PASSOS ═══════ -->
+<section class="section">
+  <div class="section-tag">10 — status e próximos passos</div>
+  <div class="section-title">O que já está <em>no ar</em></div>
+  <div class="section-lead">Situação em outubro de 2026.</div>
+
+  <div class="cards cards-2">
+    <div class="card green">
+      <div class="card-label">Entregue</div>
+      <div class="status-row"><span class="status-pill pill-ok">no ar</span><span class="status-txt"><strong>Imagem via Teams</strong>: OneDrive + rascunhos no Buffer (LI/IG/FB)</span></div>
+      <div class="status-row"><span class="status-pill pill-ok">no ar</span><span class="status-txt"><strong>Vídeo em 4 etapas</strong>: confirmação com valor, aviso no Teams e rascunho TikTok</span></div>
+      <div class="status-row"><span class="status-pill pill-ok">no ar</span><span class="status-txt"><strong>Editar drafts pelo chat</strong>: título, corpo e CTA, com auditoria</span></div>
+      <div class="status-row"><span class="status-pill pill-ok">no ar</span><span class="status-txt"><strong>Fallback de voz</strong> com alertas no Teams e por e-mail</span></div>
+      <div class="status-row"><span class="status-pill pill-ok">no ar</span><span class="status-txt"><strong>Publicação auditada</strong> e aprovações com identidade validada</span></div>
+    </div>
+    <div class="card amber">
+      <div class="card-label">Em andamento / planejado</div>
+      <div class="status-row"><span class="status-pill pill-wip">em curso</span><span class="status-txt"><strong>Status de imagem no chat</strong>: hoje a consulta de status cobre só vídeo</span></div>
+      <div class="status-row"><span class="status-pill pill-wip">em curso</span><span class="status-txt"><strong>Custo real</strong> exibido na mensagem final do vídeo</span></div>
+      <div class="status-row"><span class="status-pill pill-plan">planejado</span><span class="status-txt"><strong>Stories, Reels e 9:16</strong> direto no Buffer; vídeo para LinkedIn</span></div>
+      <div class="status-row"><span class="status-pill pill-plan">planejado</span><span class="status-txt"><strong>Aviso proativo por DM</strong>; hoje o aviso do vídeo sai no canal do Teams</span></div>
+      <div class="status-row"><span class="status-pill pill-plan">avaliação</span><span class="status-txt"><strong>FLUX Pro</strong>: mais qualidade de imagem, com custo ~16× maior</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
   <div>
@@ -1276,7 +1575,7 @@ body{
   <div class="footer-meta">
     <div>Servidor: 134.199.224.251</div>
     <div>Dashboard: hupdata-agent.com/huxley</div>
-    <div style="margin-top:4px;color:var(--cyan)">Documento interno · Jun 2026</div>
+    <div style="margin-top:4px;color:var(--cyan)">Documento interno · Out 2026</div>
   </div>
 </footer>
 
